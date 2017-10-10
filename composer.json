@@ -1,5 +1,5 @@
 {
-  "name": "thezenmonkey/silverstripe-amp",
+  "name": "md/silverstripe-amp",
   "description": "Module for converting SilverStripe Pages to Google AMP HTML",
   "type": "silverstripe-module",
   "homepage": "http://github.com/thezenmonkey/silverstripe-amp",
