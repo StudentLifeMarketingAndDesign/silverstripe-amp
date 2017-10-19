@@ -11,7 +11,13 @@ class AmpSiteTreeExtension extends SiteTreeExtension
 
     public function MetaTags(&$tags)
     {
-        $ampLink = $this->owner->AbsoluteLink()."amp.html";
-        $tags .= "<link rel='amphtml' href='$ampLink' /> \n";
+    	$ancestry = ClassInfo::ancestry($this->owner->ClassName);
+    	// Debug::show($ancestry);
+    	
+    	if (array_key_exists("BlogPost",$ancestry)){
+    		$ampLink = $this->owner->AbsoluteLink()."amp.html";
+		    $tags .= "<link rel='amphtml' href='$ampLink' /> \n";
+    	}
+	    
     }
 }

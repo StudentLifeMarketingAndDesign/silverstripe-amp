@@ -3,7 +3,7 @@
 /**
  * Google AMP Pages
  *
- * Renders Pages conforming to Google's AMP HTML stnadard
+ * Renders Pages conforming to Google's AMP HTML standard
  *
  *
  * @package amp
