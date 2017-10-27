@@ -1,6 +1,6 @@
 <style amp-custom>
 	body {
-	font-family:  @import url("https://use.typekit.net/ggu1mkb.css");
+	font-family:  'proxima-nova';
 	font-size: 16px;
 	line-height: 1.5;
 	background: #fff;
@@ -9,8 +9,8 @@
 	-moz-osx-font-smoothing: grayscale;
 	}
 	.masthead {
-	font-family:  @import url("https://use.typekit.net/ggu1mkb.css");
-	background-color: #111;
+	font-family: 'proxima-nova-condensed';
+	background-color: #000;
 	color: #fff;
 	text-align: center;
 	padding: 10px 0;
