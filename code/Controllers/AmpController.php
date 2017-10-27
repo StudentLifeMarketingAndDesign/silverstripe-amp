@@ -32,6 +32,8 @@ class AmpController extends Extension
             return false;
         }
         $base = Director::AbsoluteBaseURL();
+
+        $content = preg_replace('/(<[^>]*) style=("[^"]+"|\'[^\']+\')([^>]*>)/i', '$1$3', $content);
         $content = str_replace('src="assets/', 'src="'.$base.'assets/', $content);
         $content = str_replace("<img", "<amp-img", $content);
 
