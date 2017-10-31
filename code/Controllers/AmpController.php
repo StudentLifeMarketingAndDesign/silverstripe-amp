@@ -24,10 +24,11 @@ class AmpController extends Extension
     {
         $class = Controller::curr()->ClassName;
         $content = $this->owner->Content;
+        $contentParsed = ShortcodeParser::get_active()->parse($content);
         $base = Director::AbsoluteBaseURL();
 
         $amp = new AMP();
-        $amp->loadHtml($content);
+        $amp->loadHtml($contentParsed);
 
         $ampContent = $amp->convertToAmpHtml();
         $ampContent = str_replace('src="assets/', 'src="'.$base.'assets/', $ampContent);
