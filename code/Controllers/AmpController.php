@@ -8,6 +8,8 @@
  *
  * @package amp
  */
+use Lullabot\AMP\AMP;
+use Lullabot\AMP\Validate\Scope;
 
 class AmpController extends Extension
 {
@@ -31,6 +33,12 @@ class AmpController extends Extension
         if (!$content) {
             return false;
         }
+
+        $amp = new AMP();
+        $amp->loadHtml($content);
+
+        $amp_html = $amp->convertToAmpHtml();
+
         $base = Director::AbsoluteBaseURL();
 
         $content = preg_replace('/(<[^>]*) style=("[^"]+"|\'[^\']+\')([^>]*>)/i', '$1$3', $content);
@@ -39,7 +47,7 @@ class AmpController extends Extension
         $content = str_replace("<img", "<amp-img", $content);
         $content = str_replace('<iframe', '<amp-iframe', $content);
         $content = str_replace('gesture="media"', '', $content);
-        
-        return $content;
+
+        return $amp_html;
     }
 }
