@@ -23,31 +23,22 @@ class AmpController extends Extension
     public function amp()
     {
         $class = Controller::curr()->ClassName;
-        $page = $this->owner->renderWith(array("$class"."_amp", "Amp"));
-
-        return $this->AmplfyHTML($page);
-    }
-
-    public function AmplfyHTML($content)
-    {
-        if (!$content) {
-            return false;
-        }
+        $content = $this->owner->Content;
+        $base = Director::AbsoluteBaseURL();
 
         $amp = new AMP();
         $amp->loadHtml($content);
 
-        $amp_html = $amp->convertToAmpHtml();
+        $ampContent = $amp->convertToAmpHtml();
+        $ampContent = str_replace('src="assets/', 'src="'.$base.'assets/', $ampContent);
 
-        $base = Director::AbsoluteBaseURL();
+        $data = new ArrayData(array(
+            'Content' => $ampContent
+        ));
+        $page = $this->owner->customise($data)->renderWith(array("$class"."_amp", "Amp"));
 
-        $content = preg_replace('/(<[^>]*) style=("[^"]+"|\'[^\']+\')([^>]*>)/i', '$1$3', $content);
-        $content = str_replace('src="assets/', 'src="'.$base.'assets/', $content);
-        $content = str_replace("<img", "<amp-img", $content);
-        $content = str_replace("<img", "<amp-img", $content);
-        $content = str_replace('<iframe', '<amp-iframe', $content);
-        $content = str_replace('gesture="media"', '', $content);
-
-        return $amp_html;
+        return $page;
     }
+
+
 }
