@@ -38,6 +38,8 @@ class AmpController extends Extension
         $content = str_replace("<img", "<amp-img", $content);
         $content = str_replace("<img", "<amp-img", $content);
         $content = str_replace('<iframe', '<amp-iframe', $content);
+        $content = str_replace('gesture="media"', '', $content);
+        
         return $content;
     }
 }
