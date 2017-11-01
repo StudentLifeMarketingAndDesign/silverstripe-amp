@@ -22,7 +22,9 @@
 			</p>
 
 			$Content
-
+			<% if $ExternalURL %>
+				<p><a href="$ExternalURL" class="button--shaded" target="_blank"><% if $ExternalURLText %>$ExternalURLText<% else %>Read more...<% end_if %></a></p>
+			<% end_if %>
 			<% include AmpRelated %>
 
 		</div>
