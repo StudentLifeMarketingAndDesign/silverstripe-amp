@@ -15,7 +15,7 @@
 
 		<div class="main-column">
 			<p>
-				<amp-social-share type="facebook" width="40" height="40" data-attribution="254325784911610" class="social-share"></amp-social-share>
+				<amp-social-share type="facebook" width="40" height="40" data-param-app_id="127918570561161" class="social-share"></amp-social-share>
 				<amp-social-share type="twitter" width="40" height="40" class="social-share"></amp-social-share>
 				<amp-social-share type="linkedin" width="40" height="40" class="social-share"></amp-social-share>
 				<amp-social-share type="email" width="40" height="40" class="social-share"></amp-social-share>
