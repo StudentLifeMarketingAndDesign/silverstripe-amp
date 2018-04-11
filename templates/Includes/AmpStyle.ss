@@ -26,10 +26,22 @@
 	.title{
 		text-decoration: none;
 		color: #fff;
-		font-size: 16px;
+		font-size: 22px;
 	}
 	.main-column {
 	padding: 0 20px;
+	}
+
+	.text-center{
+		text-align: center;
+	}
+
+	.button{
+		background: #222;
+		color: white;
+		padding: 10px;
+		text-decoration: none;
+		border-bottom: 4px solid #ffcd00;
 	}
 	a {
 	color: #005c99;
